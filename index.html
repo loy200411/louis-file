@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+</html><!-- Bottom gradient overlay -->
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-100 to-transparent z-2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Auto Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .infinite-scroll {
+            animation: scroll-right 20s linear infinite;
+        }
+
+        .scroll-container {
+            mask: linear-gradient(
+                90deg,
+                transparent 0%,
+                black 10%,
+                black 90%,
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(
+                90deg,
+                transparent 0%,
+                black 10%,
+                black 90%,
+                transparent 100%
+            );
+        }
+
+        .image-item {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Pause animation on hover */
+        .scroll-container:hover .infinite-scroll {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full min-h-screen bg-gray-50 relative overflow-hidden flex items-center justify-center">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-100 via-gray-50/90 to-gray-100 z-0"></div>
+
+        <!-- Scrolling images container -->
+        <div class="relative z-10 w-full flex items-center justify-center py-8">
+            <div class="scroll-container w-full max-w-6xl">
+                <div class="infinite-scroll flex gap-6 w-max" id="imageSlider">
+                    <!-- Images will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom gradient overlay -->
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-20"></div>
+        
+        <!-- Control buttons -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-4">
+            <button onclick="pauseAnimation()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300">
+                Pause
+            </button>
+            <button onclick="playAnimation()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300">
+                Play
+            </button>
+            <button onclick="changeSpeed()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300" id="speedBtn">
+                Speed: 1x
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Your custom Blender renders from GitHub repository
+        const images = [
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-23%20a%CC%80%2000.12.09.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.22.26.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.29.26.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.30.17.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.31.27.png",
+            // Duplicate the images to have more for the infinite scroll
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-23%20a%CC%80%2000.12.09.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.22.26.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.29.26.png",
+            "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.30.17.png"
+        ];
+
+        // Animation control variables
+        let currentSpeed = 1;
+        const speeds = [0.5, 1, 1.5, 2];
+        let speedIndex = 1;
+
+        // Initialize the slider
+        function initializeSlider() {
+            const slider = document.getElementById('imageSlider');
+            const duplicatedImages = [...images, ...images];
+            
+            duplicatedImages.forEach((imageUrl, index) => {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'image-item flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl';
+                
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = `Gallery image ${(index % images.length) + 1}`;
+                img.className = 'w-full h-full object-cover';
+                img.loading = 'lazy';
+                
+                imageDiv.appendChild(img);
+                slider.appendChild(imageDiv);
+            });
+        }
+
+        // Control functions
+        function pauseAnimation() {
+            const slider = document.getElementById('imageSlider');
+            slider.style.animationPlayState = 'paused';
+        }
+
+        function playAnimation() {
+            const slider = document.getElementById('imageSlider');
+            slider.style.animationPlayState = 'running';
+        }
+
+        function changeSpeed() {
+            speedIndex = (speedIndex + 1) % speeds.length;
+            currentSpeed = speeds[speedIndex];
+            
+            const slider = document.getElementById('imageSlider');
+            const duration = 20 / currentSpeed;
+            slider.style.animationDuration = `${duration}s`;
+            
+            const speedBtn = document.getElementById('speedBtn');
+            speedBtn.textContent = `Speed: ${currentSpeed}x`;
+        }
+
+        // Keyboard controls
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case ' ':
+                case 'Spacebar':
+                    event.preventDefault();
+                    const slider = document.getElementById('imageSlider');
+                    if (slider.style.animationPlayState === 'paused') {
+                        playAnimation();
+                    } else {
+                        pauseAnimation();
+                    }
+                    break;
+                case 'ArrowUp':
+                case 'ArrowRight':
+                    event.preventDefault();
+                    changeSpeed();
+                    break;
+            }
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeSlider);
+
+        // Add some visual feedback for loading
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
