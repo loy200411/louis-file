@@ -1,21 +1,49 @@
-<!DOCTYPE html>
 
-</html><!-- Bottom gradient overlay -->
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-100 to-transparent z-2<!DOCTYPE html>
-<html lang="en">
+</html><!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Auto Slider</title>
+    <title>Louis JACQUET | Official Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
-        html, body {
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Roboto+Condensed:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://huggingface.co/spaces/Loy11/loy-wedbiste/resolve/main/images/la puerta de los angeles bronze 3.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .title-font {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .hovered-element {
+            transition: transform 0.3s ease;
+        }
+        .hovered-element:hover {
+            transform: scale(1.02);
         }
 
+        /* Image Auto Slider Styles */
         @keyframes scroll-right {
             0% {
                 transform: translateX(0);
@@ -55,64 +83,534 @@
             filter: brightness(1.1);
         }
 
-        /* Pause animation on hover */
         .scroll-container:hover .infinite-scroll {
             animation-play-state: paused;
         }
     </style>
 </head>
-<body>
-    <div class="w-full min-h-screen bg-gray-50 relative overflow-hidden flex items-center justify-center">
-        <!-- Background gradient -->
-        <div class="absolute inset-0 bg-gradient-to-b from-gray-100 via-gray-50/90 to-gray-100 z-0"></div>
+<body class="bg-gray-50 text-gray-800">
+  
 
-        <!-- Scrolling images container -->
-        <div class="relative z-10 w-full flex items-center justify-center py-8">
+    <!-- Hero Section -->
+    <section class="hero-section pt-32 pb-20 md:pt-40 md:pb-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:w-2/3 lg:w-1/2" data-aos="fade-right">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 title-font text-center">LOUIS JACQUET</h1>
+                <div class="text-center">
+                    <a href="#" class="inline-block bg-white text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300">Explore Artworks</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Spline Viewer Section -->
+    <section class="w-full h-screen bg-black" data-aos="fade-up">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/tfmf2zK0E2VURVMj/scene.splinecode" style="width:100%; height:100%; display:block;">
+        </spline-viewer>
+    </section>
+
+ 
+
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 md:sticky md:top-20 order-2 md:order-1" data-aos="fade-right">
+                    <img src="https://huggingface.co/spaces/Loy11/loy-wedbiste/resolve/main/images/IMG_2020.jpeg" alt="Louis Jacquet" class="rounded-lg shadow-xl w-full mb-8 md:mb-0">
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left">
+                    <p class="text-lg mb-6">Louis Jacquet was born in Paris in 2004. After visiting museums in Paris, in 2022 he began his artistic training at the Brera Academy of Fine Arts in Milan. In 2024, he continued his studies at the Facultad de Bellas Artes in Barcelona, where he spent a year as an exchange student. There, he concentrated on sculpture and painting, specializing in bronze casting.</p>
+                    <p class="text-lg mb-6">His career has been nourished by an assiduous frequentation of museums and archaeological sites. His many trips to Italy - Rome, Florence and Milan in particular - and Greece have brought him into direct contact with Antiquity and the masterpieces of art history. In the manner of a modern Grand Tour, this confrontation with the remains of Greco-Roman civilization was a founding foundation for him.</p>
+                    <p class="text-lg mb-6">Louis Jacquet's work develops from a practice in which drawing, painting and sculpture interact with 3D modeling, digital composition, three-dimensional printing and augmented reality. His aim is not to reproduce tradition, but to update it, reinterpret it and inscribe it in new forms capable of opening up a field of reflection that is both aesthetic and symbolic.</p>
+                    <p class="text-lg mb-6">Louis Jacquet's artistic research focuses on biblical themes such as the fall of the angels, the figures of martyrs and the Last Judgment, renewed by a contemporary reading, between memory and metamorphosis.</p>
+                    <p class="text-lg mb-6">Around this thematic orientation is articulated a particularly dense and structured artistic production. Since 2017, Louis Jacquet has produced around 2,500 drawings, methodically grouped together in 125 notebooks that constitute a source of graphic reflections from which he draws to create his paintings and sculptures.</p>
+                    <p class="text-lg mb-6">Louis Jacquet's practice is defined by the search for a balance between the classical and the contemporary. By reinterpreting European traditions using today's technologies, he creates a body of work that combines historical continuity, experimental rigor and an eye to the future.</p>
+                    <a href="#" class="inline-block border-2 border-gray-800 text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-gray-800 hover:text-white transition duration-300">Read Full Biography</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 3D Carrousels Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- First Carousel -->
+            <div class="mb-20 bg-white flex flex-col items-center gap-5 w-full min-h-[600px] p-20 relative overflow-visible">
+                <div style="height:496px;transform-style:preserve-3d;z-index:1;width:960px;position:relative;transform:scale(1.7);">
+                    <div style="width:100%;height:100%;position:relative;perspective:1000px;overflow:hidden;z-index:0;pointer-events:auto">
+                        <style>
+                          @keyframes rotation1 {
+                            from { transform: rotateY(0deg); }
+                            to { transform: rotateY(360deg); }
+                          }
+
+                          .carousel1 {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            transform-style: preserve-3d;
+                            transform-origin: center center;
+                            animation: rotation1 60s infinite linear;
+                            animation-play-state: running;
+                          }
+
+                          .carousel1:hover {
+                            animation-play-state: paused;
+                          }
+
+                          .carousel1 figure {
+                            position: absolute;
+                            margin: 0;
+                            top: 50%;
+                            left: 50%;
+                            transform-origin: center center;
+                            overflow: hidden;
+                            transition: transform 0.5s ease;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel1 figure img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: all 0.5s ease;
+                            cursor: pointer;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel1 figure img:hover {
+                            transform: scale(1.2);
+                          }
+                        </style>
+                        <div class="carousel1">
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(0deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/Hl1Zk2uYzGrUC6uBE9CyMc6iCqs.jpg?width=1224&height=1584" alt="carousel-0" style="border-radius:0">
+                            </figure>
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(60deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/Kg9RMQurmp8eQPllWpHJE9BjoO0.jpg?width=1224&height=1584" alt="carousel-1" style="border-radius:0">
+                            </figure>
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(120deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/aN5GcPSLsVriL0fW1sPcLZiG4.jpg?width=1224&height=1584" alt="carousel-2" style="border-radius:0">
+                            </figure>
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(180deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/NTi0r1ROFX31yRIaCMSE3f9sOk.jpg?width=1224&height=1584" alt="carousel-3" style="border-radius:0">
+                            </figure>
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(240deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/tv4ZZYEO974gTfhCjSNFGKzl70.jpg?width=1224&height=1584" alt="carousel-4" style="border-radius:0">
+                            </figure>
+                            <figure style="width:221px;height:300px;transform:translate(-50%, -50%) rotateY(300deg) translateZ(250px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/ep0FTWYaXbVmGsAK53jdx0ql1c.jpg?width=1224&height=1584" alt="carousel-5" style="border-radius:0">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Carousel -->
+            <div class="mb-20 bg-white flex flex-col items-center gap-5 w-full min-h-[600px] p-20 relative overflow-visible">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4 title-font">Composizione dei martiri</h2>
+                    <p class="text-gray-600">Author</p>
+                </div>
+                <div style="height:496px;z-index:1;width:83%;transform:scale(1.7);position:relative;">
+                    <div style="width:100%;height:100%;position:relative;perspective:1000px;overflow:hidden;z-index:0;pointer-events:auto">
+                        <style>
+                          @keyframes rotation2 {
+                            from { transform: rotateY(0deg); }
+                            to { transform: rotateY(360deg); }
+                          }
+
+                          .carousel2 {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            transform-style: preserve-3d;
+                            transform-origin: center center;
+                            animation: rotation2 60s infinite linear;
+                            animation-play-state: running;
+                          }
+
+                          .carousel2:hover {
+                            animation-play-state: paused;
+                          }
+
+                          .carousel2 figure {
+                            position: absolute;
+                            margin: 0;
+                            top: 50%;
+                            left: 50%;
+                            transform-origin: center center;
+                            overflow: hidden;
+                            transition: transform 0.5s ease;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel2 figure img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: all 0.5s ease;
+                            cursor: pointer;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel2 figure img:hover {
+                            transform: scale(1.2);
+                          }
+                        </style>
+                        <div class="carousel2">
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(0deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/FiUtD3UFIh711ERhf60Iv2YuSA8.jpg?width=1224&height=1584" alt="carousel-0" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(51.42857142857143deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/abUy89bc4WF7BcJ8HNmNo0hGqQ.jpg?width=1224&height=1584" alt="carousel-1" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(102.85714285714286deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/d0xyTWAsPHAKaRabxfYw7YAOsVk.jpg?width=1224&height=1584" alt="carousel-2" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(154.28571428571428deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/DeZQQ13fRnBndA1UgYdP4r9lI.jpg?width=1224&height=1584" alt="carousel-3" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(205.71428571428572deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/bmAGqixYSmqWZEmh2vgNEjZFY.jpg?width=1224&height=1584" alt="carousel-4" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(257.14285714285717deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/unGfmsrmaFOreZM3AyALXmBjd44.jpg?width=1224&height=1584" alt="carousel-5" style="border-radius:0">
+                            </figure>
+                            <figure style="width:213px;height:300px;transform:translate(-50%, -50%) rotateY(308.57142857142856deg) translateZ(300px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/xQD2AKrT2xJKi4hSy8gbgZaOFgs.jpg?width=1224&height=1584" alt="carousel-6" style="border-radius:0">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Carousel -->
+            <div class="mb-20 bg-white flex flex-col items-center gap-5 w-full min-h-[600px] p-20 relative overflow-visible">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4 title-font">Composizione dei martiri</h2>
+                    <p class="text-gray-600">Author</p>
+                </div>
+                <div style="width:100%;height:100%;position:relative;transform:scale(2.6);">
+                    <div style="width:100%;height:100%;position:relative;perspective:1000px;overflow:hidden;z-index:0;pointer-events:auto">
+                        <style>
+                          @keyframes rotation3 {
+                            from { transform: rotateY(0deg); }
+                            to { transform: rotateY(360deg); }
+                          }
+
+                          .carousel3 {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            transform-style: preserve-3d;
+                            transform-origin: center center;
+                            animation: rotation3 40s infinite linear;
+                            animation-play-state: running;
+                          }
+
+                          .carousel3:hover {
+                            animation-play-state: paused;
+                          }
+
+                          .carousel3 figure {
+                            position: absolute;
+                            margin: 0;
+                            top: 50%;
+                            left: 50%;
+                            transform-origin: center center;
+                            overflow: hidden;
+                            transition: transform 0.5s ease;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel3 figure img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: all 0.5s ease;
+                            cursor: pointer;
+                            backface-visibility: visible;
+                          }
+
+                          .carousel3 figure img:hover {
+                            transform: scale(1.2);
+                          }
+                        </style>
+                        <div class="carousel3">
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(0deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/o51JToIgJRGiMm3p7MnTT8JBmg.jpg?width=1224&height=1584" alt="carousel-0" style="border-radius:0">
+                            </figure>
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(60deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/n9sDfTv3FLqxKJNoj5y80Fbxxu8.jpg?width=1224&height=1584" alt="carousel-1" style="border-radius:0">
+                            </figure>
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(120deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/i0jh4tT4oRAPIXCttsjz2KMMhg4.jpg?width=1224&height=1584" alt="carousel-2" style="border-radius:0">
+                            </figure>
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(180deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/xVnfdvzWQr8PaJJYN8xRhoVqb8.jpg?width=1224&height=1584" alt="carousel-3" style="border-radius:0">
+                            </figure>
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(240deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/LlYwYyttvs34Xbb86mZA4b7JKiw.jpg?width=1224&height=1584" alt="carousel-4" style="border-radius:0">
+                            </figure>
+                            <figure style="width:165px;height:300px;transform:translate(-50%, -50%) rotateY(300deg) translateZ(150px);border-radius:0">
+                                <img src="https://framerusercontent.com/images/xVnfdvzWQr8PaJJYN8xRhoVqb8.jpg?width=1224&height=1584" alt="carousel-5" style="border-radius:0">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- Image Auto Slider Section -->
+    <section class="w-full min-h-screen bg-white
+    -50 relative overflow-hidden flex items-center justify-center">
+         <div class="relative z-10 w-full flex items-center justify-center py-8">
             <div class="scroll-container w-full max-w-6xl">
                 <div class="infinite-scroll flex gap-6 w-max" id="imageSlider">
                     <!-- Images will be populated by JavaScript -->
                 </div>
             </div>
         </div>
-        
-        <!-- Bottom gradient overlay -->
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-20"></div>
-        
-        <!-- Control buttons -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-4">
-            <button onclick="pauseAnimation()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300">
-                Pause
-            </button>
-            <button onclick="playAnimation()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300">
-                Play
-            </button>
-            <button onclick="changeSpeed()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm transition-all duration-300" id="speedBtn">
-                Speed: 1x
-            </button>
+  
+    </section>
+
+    <!-- Grid 3D Section avec Spline + 9 cases -->
+    <section class="py-20 bg-white flex items-center justify-center min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 title-font">Featured Artworks</h2>
+                <div class="w-20 h-1 bg-gray-800 mx-auto"></div>
+            </div>
+            
+            <!-- 3x3 Grid -->
+            <div class="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Case 1 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/365e8c1500d34b419d392f74362a00a0/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 2 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/7f955263a3fb47dd9abe027fd8e17c29/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 3 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/beca506e9ca54d84be38fd91c55c50b1/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 4 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/079be109545c4cfaaf64ac38b8c9756c/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 5 - Spline 3D au centre -->
+                <div class="aspect-square bg-black rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/tfmf2zK0E2VURVMj/scene.splinecode" class="w-full h-full">
+                    </spline-viewer>
+                </div>
+                <!-- Case 6 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/4214312efb9c40aeb1ca6f1cac296778/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 7 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/553f0f243b0d4c07b9ecab30b2bcf3df/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 8 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/f298686ae6ba4342a103bc54f4e7167a/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+                <!-- Case 9 -->
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden shadow-xl flex items-center justify-center relative">
+                    <iframe 
+                        src="https://sketchfab.com/models/237bda68b9b54d34aa5a2bfbf3a39a6e/embed?ui_infos=0&ui_controls=0&ui_stop=0&ui_hint=0" 
+                        class="w-full h-full border-none"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="https://sketchfab.com/search?q=cc+Louis+JACQUET&type=models" target="_blank" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-300">View All Artworks</a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 title-font">Career Highlights</h2>
+                <div class="w-20 h-1 bg-gray-800 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8 relative">
+                    <div class="timeline-item pl-8 relative" data-aos="fade-right">
+                        <div class="absolute left-0 w-4 h-4 rounded-full bg-gray-800 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold mb-2 title-font">2022</h3>
+                        <a href="https://www.accademiadibrera.milano.it/" target="_blank" class="text-gray-600 hover:text-gray-800">Accademia di belle arti di Brera, Milano</a>
+                    </div>
+                    <div class="timeline-item pl-8 relative" data-aos="fade-right" data-aos-delay="100">
+                        <div class="absolute left-0 w-4 h-4 rounded-full bg-gray-800 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold mb-2 title-font">2024</h3>
+                        <p class="text-gray-600">Facultat de belles arts de Barcelona</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 text-white relative bg-cover bg-center" style="background-image: url('https://huggingface.co/spaces/Loy111/loy-portfolio/resolve/main/images/IMG_9073.jpeg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <i data-feather="quote" class="w-12 h-12 mx-auto text-gray-300 mb-6"></i>
+            <p class="text-2xl md:text-3xl italic mb-8">"The angel's descent is not an end, but the unveiling of another sky."</p>
+            <p class="text-lg">— Louis JACQUET</p>
+        </div>
+    </section>
+
+    <!-- Exhibitions Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 title-font">Current & Upcoming Exhibitions</h2>
+                <div class="w-20 h-1 bg-gray-800 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/Loy111/loy-portfolio/resolve/main/images/IMG_1085.jpeg" alt="Exhibition" class="w-full h-64 object-cover hovered-element">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 title-font">La caduta delle ali: Louis & Antonio</h3>
+                        <p class="text-gray-600 mb-2">Boutique Hotel Selinunte</p>
+                        <p class="text-gray-600 mb-4">15 august 2025</p>
+                        <a href="#" class="text-gray-900 font-medium hover:text-gray-600 flex items-center">
+                            Learn more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 title-font">Stay Updated</h2>
+            <p class="text-xl mb-8">Subscribe to receive news about exhibitions, artworks, and events</p>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent sm:w-96">
+                <button type="submit" class="bg-gray-800 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-700 transition duration-300">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 title-font">LOUIS JACQUET</h3>
+                    <p class="text-gray-400">Transforming everyday images into works of art that engage with our time and historical past.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="https://sketchfab.com/search?q=cc+Louis+JACQUET&type=models" target="_blank" class="text-gray-400 hover:text-white">Artworks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Exhibitions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">News</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <address class="not-italic text-gray-400">
+                        <p>12 cour du Liegat</p>
+                        <p>Paris, FRANCE</p>
+                        <p class="mt-2">+33 6 31 38 33 76</p>
+                        <p>35jacquetlouis@gmail.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Louis Jacquet. Some rights reserved. <img src="https://licensebuttons.net/l/by/4.0/80x15.png" alt="Creative Commons License" class="inline ml-2"></p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Your custom Blender renders from GitHub repository
+        // Image Auto Slider Script
         const images = [
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-23%20a%CC%80%2000.12.09.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.22.26.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.29.26.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.30.17.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.31.27.png",
-            // Duplicate the images to have more for the infinite scroll
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-23%20a%CC%80%2000.12.09.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.22.26.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.29.26.png",
             "https://raw.githubusercontent.com/loy200411/files_images/6680f45a5ac42b98e09a21974823aa349dfe064e/Capture%20d%E2%80%99e%CC%81cran%202025-08-25%20a%CC%80%2017.30.17.png"
         ];
 
-        // Animation control variables
         let currentSpeed = 1;
         const speeds = [0.5, 1, 1.5, 2];
         let speedIndex = 1;
 
-        // Initialize the slider
         function initializeSlider() {
             const slider = document.getElementById('imageSlider');
             const duplicatedImages = [...images, ...images];
@@ -132,7 +630,6 @@
             });
         }
 
-        // Control functions
         function pauseAnimation() {
             const slider = document.getElementById('imageSlider');
             slider.style.animationPlayState = 'paused';
@@ -155,7 +652,6 @@
             speedBtn.textContent = `Speed: ${currentSpeed}x`;
         }
 
-        // Keyboard controls
         document.addEventListener('keydown', function(event) {
             switch(event.key) {
                 case ' ':
@@ -176,13 +672,14 @@
             }
         });
 
-        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', initializeSlider);
-
-        // Add some visual feedback for loading
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
+        
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
         });
+        feather.replace();
     </script>
 </body>
 </html>
